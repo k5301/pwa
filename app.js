@@ -5,9 +5,11 @@ const app = express()
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, 'public/index.html'))
-})
+app.use("/",express.static("public"));
+
+// app.get('/', function(req, res) {
+//   res.sendFile(path.join(__dirname, 'public/index.html'))
+// })
 
 
 var port = process.env.PORT || 3000;

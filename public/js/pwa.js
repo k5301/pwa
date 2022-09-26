@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', init, false);
 function init() {
-  console.log('empty for now')
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then((reg) => {
+        console.log('Service worker registered -->', reg);
+      }, (err) => {
+        console.error('Service worker not registered -->', err);
+      });
+  }
 }
