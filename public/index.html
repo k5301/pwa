@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="manifest" href="/js/pwa.webmanifest">
+
+    <link rel="manifest" href="/manifest.json">
     <link rel="apple-touch-icon" href="/images/apple-touch.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#764ABC"/>
+    
     <title>Document</title>
 </head>
 <body>
     <h1>CREATING FIRST PWA</h1>
      <span>This example is for the article of progressive web apps written for LogRocket</span>
     <br>
-    <span>You are now</span> <span><b class="page-status">online</b></span>
-    <!-- <script src="/js/pwa.js"></script> -->
+    <span>You are now</span> <span><b class="page-status">online</b></span><br>
+    <button onclick="location.href='./about.html';">About</button>
+
     <script>
         if (!navigator.serviceWorker.controller) {
             navigator.serviceWorker.register("/service_worker.js").then(function(reg) {
@@ -22,7 +25,5 @@
             });
         }
     </script>
-    <!-- <script src="/js/status.js"></script>
-    <script src="service_worker.js"></script> -->
 </body>
 </html>
