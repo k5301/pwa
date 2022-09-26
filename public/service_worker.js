@@ -7,7 +7,7 @@ var preLoad = function(){
   return caches.open("offline").then(function(cache) {
     console.log("caching index and important routes");
     // return cache.addAll(["/blog/", "/blog", "/", "/contact", "/resume", "/offline.html"]);
-    return cache.addAll(["/index.html","offline.html"]);
+    return cache.addAll(["/index.html","/offline.html"]);
   });
 };
 
@@ -36,6 +36,8 @@ var addToCache = function(request){
     return fetch(request).then(function (response) {
       console.log(response.url + " was cached");
       return cache.put(request, response);
+    }).catch(function(){
+      return returnFromCache(request);
     });
   });
 };
